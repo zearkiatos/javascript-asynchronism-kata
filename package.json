@@ -1,0 +1,25 @@
+{
+  "name": "javascript-asynchronism-kata",
+  "version": "1.0.0",
+  "description": "This is a javascript 🟨 project kata 🥋 to learn, practice asynchronism in javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zearkiatos/javascript-asynchronism-kata.git"
+  },
+  "keywords": [
+    "Javascript",
+    "kata",
+    "asynchronism",
+    "vanilla"
+  ],
+  "author": "Pedro Capriles <caprilespe@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zearkiatos/javascript-asynchronism-kata/issues"
+  },
+  "homepage": "https://github.com/zearkiatos/javascript-asynchronism-kata#readme"
+}
