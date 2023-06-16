@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: javascript-asynchronism-kata
+    volumes: 
+      - ".:/app"
+    ports:
+      - "3001:3000"
+    tty: true

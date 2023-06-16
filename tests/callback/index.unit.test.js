@@ -29,4 +29,18 @@ describe("Callback unit test suites", () => {
     expect(consoleLogSpyOn).toHaveBeenCalled();
     expect(consoleLogSpyOn).toHaveBeenCalledWith(expectedMessage);
   });
+
+  test("Should call an specific function after 2 seconds", async () => {
+    const setTimeoutSpyOn = jest.spyOn(global, "setTimeout");
+    const consoleLogSpyOn = jest.spyOn(console, "log");
+    const expectedMessage = "Log after 2s";
+    const myFunc = () => console.log(expectedMessage);
+
+    callback.execCallback(myFunc);
+    await sleep(2000);
+
+    expect(setTimeoutSpyOn).toHaveBeenCalled();
+    expect(consoleLogSpyOn).toHaveBeenCalled();
+    expect(consoleLogSpyOn).toHaveBeenCalledWith(expectedMessage);
+  });
 });
