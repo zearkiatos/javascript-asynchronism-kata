@@ -6,6 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: javascript-asynchronism-kata
+    env_file:
+      - .env
     volumes: 
       - ".:/app"
     ports:
