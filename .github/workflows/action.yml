@@ -26,6 +26,9 @@ jobs:
         touch .env &&
         echo "ENVIRONMENT=${ENVIRONMENT}" > .env
         echo "PLATZI_FAKE_API_BASE_URL=${PLATZI_FAKE_API_BASE_URL}" >> .env
+      env:
+        ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
+        PLATZI_FAKE_API_BASE_URL: ${{secrets.PLATZI_FAKE_API_BASE_URL}}
     - name: Test 🧪
       run: npm run test
     - name: Build docker 🐳

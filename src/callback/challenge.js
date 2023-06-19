@@ -3,7 +3,6 @@ import httpStatusCodes from 'http-status-codes';
 
 function fetchData(urlApi, callback) {
   let http = new XMLHttpRequest();
-  console.log(http.open);
   http.open("GET", urlApi, true);
   http.onreadystatechange = function (event) {
     if (http.readyState === 4) {
@@ -15,6 +14,10 @@ function fetchData(urlApi, callback) {
             return callback(error, null);
         }
     }
+    else {
+      const error = new Error(`Error ${urlApi}`);
+      return callback(error, null);
+  }
   };
   http.send();
 }
