@@ -8,7 +8,7 @@ describe("Unit suite test for promise", () => {
     expect(result).toBe(expectedResult);
   });
 
-  test("Should resolve with the cows quantity", () => {
+  test("Should resolve with the cows quantity", (done) => {
     const expectedCowsQuantity = "We have 15 cows 🐮 in the farm";
 
     countCows().then((result) => {
