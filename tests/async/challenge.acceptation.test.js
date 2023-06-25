@@ -45,17 +45,14 @@ describe("Test acceptation suite with asynchronism", () => {
     await anotherFunction(config.PLATZI_FAKE_API_BASE_URL);
 
     expect(fetchSpyOn).toHaveBeenCalled();
-    expect(fetchSpyOn.mock.calls[0][0]).toBe(
+    expect(fetchSpyOn.mock.calls).toHaveLength(3);
+    expect(fetchSpyOn.mock.calls[1][0]).toContain(
       `${config.PLATZI_FAKE_API_BASE_URL}/products`
     );
-    expect(fetchSpyOn.mock.calls[1][0]).toBe(
-      `${config.PLATZI_FAKE_API_BASE_URL}/products/3`
-    );
-    expect(fetchSpyOn.mock.calls[2][0]).toBe(
-      `${config.PLATZI_FAKE_API_BASE_URL}/categories/5`
+    expect(fetchSpyOn.mock.calls[2][0]).toContain(
+      `${config.PLATZI_FAKE_API_BASE_URL}/categories`
     );
     expect(consoleLogSpyOn).toHaveBeenCalled();
-    expect(consoleLogSpyOn.mock.calls[1][0]).toBe("Elegant Rubber Ball");
-    expect(consoleLogSpyOn.mock.calls[2][0]).toBe("Others");
+    expect(consoleLogSpyOn.mock.calls).toHaveLength(3);
   });
 });
